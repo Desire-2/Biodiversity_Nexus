@@ -63,7 +63,7 @@ const Contact = () => {
         <Navigation /> {/* Include the Navigation component */}
       </header>
       <h1>Contact Us</h1>
-      <p className={styles.description}>If you have any questions or inquiries, please feel free to contact us using the form below or Direct chat with us on Whatsapp.</p>
+      <p className={styles.description}>If you have any questions or inquiries, please feel free to contact us using the form below, or Direct chat with us on Whatsapp.</p>
       {submissionError && <p className={styles.error}>{submissionError}</p>}
       {submissionSuccess && <p className={styles.success}>Your message has been sent successfully!</p>}
       <form onSubmit={handleSubmit} className={styles.form}>

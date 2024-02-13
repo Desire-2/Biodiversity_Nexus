@@ -22,39 +22,72 @@ export default function OrganizationalStructure() {
           ]
         },
         {
-          name: 'Vice President',
+          name: 'Vice Coordinator',
           members: [
             {
-              name: 'Jane Smith',
-              email: 'jane@example.com',
-              phone: '+1987654321',
+              name: 'Jean Damour Irakoze',
+              email: 'jdamourirakoze@gmail.com',
+              phone: '+250786934546',
               image: '/jane_smith.jpg'
             }
           ]
-        }
+        },
+        {
+          name: 'Secretary',
+          members: [
+            {
+              name: 'Liliane Uwizeyimana  ',
+              email: 'uwizeyimanaliliane22@gmail.com',
+              phone: '+250786700993',
+              image: '/jane_smith.jpg'
+            }
+          ]
+        },
+        {
+          name: 'Financial Manager',
+          members: [
+            {
+              name: 'Clemence MUGISHA',
+              email: 'mugishaclemence6@gmail.com',
+              phone: '+250789982043',
+              image: '/jane_smith.jpg'
+            }
+          ]
+        },
+        {
+          name: 'Program Manager',
+          members: [
+            {
+              name: 'Mwiseneza Uwe Theophile ',
+              email: 'mwisenezauwet@gmail.com',
+              phone: '+250787492740',
+              image: '/jane_smith.jpg'
+            }
+          ]
+        },
       ]
     },
     {
       name: 'Department Heads',
       roles: [
         {
-          name: 'Education and Awareness',
+          name: 'Communication Officer',
           members: [
             {
-              name: 'Alice Johnson',
-              email: 'alice@example.com',
-              phone: '+1122334455',
+              name: 'Hemenegilde Undimwana',
+              email: 'hermenegide3@gmail.com',
+              phone: '+250781499864',
               image: '/alice_johnson.jpg'
             }
           ]
         },
         {
-          name: 'Sustainable Action',
+          name: 'Administration Officer',
           members: [
             {
-              name: 'Bob Thompson',
+              name: 'Theoneste IRANKUNDA',
               email: 'bob@example.com',
-              phone: '+9988776655',
+              phone: '+250789428058',
               image: '/bob_thompson.jpg'
             }
           ]
