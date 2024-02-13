@@ -3,7 +3,7 @@ import styles from './Navigation.module.css';
 const Footer = () => {
     return (
       <footer className={styles.footer}>
-        <img className={styles.log} src="./../images/Log D.png" alt="Biodiversity Nexus Rwanda Logo" srcset=""></img>
+        <img className={styles.log} src="./../images/Log D.png" alt="Biodiversity Nexus Rwanda Logo" />
         <div className={styles.contact}>
           <h3>Contact Us</h3>
           <p>Email: biodiversitynexus@yahoo.com</p>
