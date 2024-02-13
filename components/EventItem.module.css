@@ -1,0 +1,24 @@
+/* src/components/EventItem.module.css */
+.event-item-container {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .event-item-image {
+    max-width: 100px;
+  }
+  
+  .event-item-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+  }
+  
+  .event-item-info {
+    margin-bottom: 10px;
+  }
+  
+  .event-item-description {
+    color: #666;
+  }
+  

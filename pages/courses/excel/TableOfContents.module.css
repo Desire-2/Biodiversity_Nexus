@@ -1,0 +1,58 @@
+/* TableOfContents.module.css */
+
+.tableOfContents {
+    position: sticky;
+    top: 20px;
+    margin-right: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  .list {
+    list-style-type: decimal;
+    padding-left: 20px;
+  }
+  
+  .subList {
+    list-style-type: lower-alpha;
+    padding-left: 20px;
+  }
+  
+  .list li {
+    margin-bottom: 10px;
+  }
+  
+  .subList li {
+    margin-bottom: 5px;
+  }
+
+  .tableOfContents {
+    position: sticky;
+    top: 20px;
+    margin-right: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+  
+  .list {
+    list-style-type: decimal;
+    padding-left: 20px;
+  }
+  
+  .subList {
+    list-style-type: lower-alpha;
+    padding-left: 20px;
+  }
+  
+  .list li {
+    margin-bottom: 10px;
+  }
+  
+  .subList li {
+    margin-bottom: 5px;
+  }
+  

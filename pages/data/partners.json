@@ -1,0 +1,14 @@
+
+[
+    {
+      "name": "Example Partner 1",
+      "description": "Description of Example Partner 1",
+      "logo": "/path/to/partner1-logo.jpg"
+    },
+    {
+      "name": "Example Partner 2",
+      "description": "Description of Example Partner 2",
+      "logo": "/path/to/partner2-logo.jpg"
+    }
+  ]
+  

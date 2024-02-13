@@ -1,0 +1,25 @@
+{
+    "events": [
+      {
+        "id": 1,
+        "title": "Upcoming Event 1",
+        "location": "Event Location 1",
+        "date": "2024-02-15",
+        "time": "15:00",
+        "image": "/images/event1.jpg",
+        "description": "Description for Upcoming Event 1",
+        "status": "upcoming"
+      },
+      {
+        "id": 2,
+        "title": "Upcoming Event 2",
+        "location": "Event Location 2",
+        "date": "2024-02-20",
+        "time": "16:00",
+        "image": "/images/event2.jpg",
+        "description": "Description for Upcoming Event 2",
+        "status": "upcoming"
+      }
+    ]
+  }
+  

@@ -1,0 +1,209 @@
+/* Styles for the Opportunity component */
+
+.opportunityContainer {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    max-width: flex;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .opportunityContainer h1 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .opportunityContainer input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+  }
+  
+  .filters {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+  }
+  
+  .filters button {
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding: 8px 16px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .filters button:hover {
+    background-color: #0056b3;
+  }
+  
+  .sortOptions {
+    margin-bottom: 20px;
+  }
+  
+  .sortOptions label {
+    margin-right: 10px;
+    font-weight: bold;
+  }
+  
+  .sortOptions select {
+    padding: 8px;
+    border-radius: 6px;
+  }
+  .sortOptions label {
+  margin-right: 10px;
+  font-weight: bold;
+}
+
+  .shareOptions {
+    margin-bottom: 20px;
+  }
+  
+  .shareOptions input[type="radio"] {
+    margin-right: 5px;
+  }
+  
+  .opportunityList {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .opportunityList li {
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .opportunityList li h3 {
+    color: #007bff;
+    margin-bottom: 10px;
+  }
+  
+  .opportunityList li p {
+    color: #555;
+  }
+  
+  .opportunityList li button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .opportunityList li button:hover {
+    background-color: #0056b3;
+  }
+  
+  .pagination {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .pagination li {
+    margin-right: 5px;
+  }
+  
+  .pagination li button {
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .pagination li button:hover {
+    background-color: #0056b3;
+  }
+  
+  .active button {
+    background-color: #0056b3;
+  }
+  
+  .detailedView Button  {
+    background-color: #08325f;
+    padding: 10px 20px;
+    background-color: #04ff00;
+    color: #1c1919;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Blue */
+  }
+
+  /* Opportunity.module.css */
+
+.bookmarksContainer {
+  margin-top: 20px;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.bookmarkItem {
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+.bookmarkTitle {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.bookmarkSnippet {
+  font-size: 14px;
+}
+
+.removeBookmarkButton {
+  margin-top: 5px;
+  padding: 5px 10px;
+  border: none;
+  background-color: #dc3545;
+  color: #fff;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.removeBookmarkButton:hover {
+  background-color: #c82333;
+}
+/* Opportunity.module.css */
+
+.viewDetailButton {
+  background-color: #007bff;
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.viewDetailButton:hover {
+  background-color: #0056b3;
+}
+
+  

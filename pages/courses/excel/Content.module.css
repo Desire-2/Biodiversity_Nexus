@@ -1,0 +1,29 @@
+/* Content.module.css */
+
+.content {
+    width: calc(100% - 300px); /* Adjust width based on the width of your table of contents */
+    float: left;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+  }
+  .introduction {
+    padding: 20px;
+  }
+  
+  .introduction h2 {
+    color: #333;
+  }
+  
+  .introduction h3 {
+    color: #555;
+  }
+  
+  .introduction h4 {
+    color: #777;
+  }
+  
+  .introduction p {
+    margin-bottom: 10px;
+  }

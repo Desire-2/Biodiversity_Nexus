@@ -1,0 +1,38 @@
+/* DonatePage.module.css */
+
+.container {
+    max-width: flex;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.paragraph {
+    margin-bottom: 20px;
+}
+
+.donationContainer {
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.input {
+    padding: 8px;
+    margin-bottom: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
