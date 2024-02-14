@@ -1,11 +1,11 @@
-// pages/index.js
+// pages/study.js
 import React from 'react';
 import Footer from '../components/Footer';
 import Navigation from '../components/Navigation';
 import styles from './study.module.css'; // Import CSS module
 import TutorialPage from './courses/excel'; // Import the TutorialPage component
 
-const Home = () => {
+const Study = () => {
   const exploreCourse = (courseUrl) => {
     window.location.href = courseUrl;
   };
@@ -23,7 +23,7 @@ const Home = () => {
       <section id="about" className={styles.about}>
         <div className={styles.container}>
             <h2>About Us</h2>
-            <p>At Biodiversity Nexus, we go beyond biodiversity conservation; we also empower individuals through Data Analysis Learning. We're not just instructors in data analysis; we're here to help you become a data superhero. Explore the realm of insights and trends with our expert courses.</p>
+            <p>At Biodiversity Nexus, we go beyond biodiversity conservation; we also empower individuals through Data Analysis Learning. We&apos;re not just instructors in data analysis; we&apos;re here to help you become a data superhero. Explore the realm of insights and trends with our expert courses.</p>
         </div>
     </section>
 
@@ -58,4 +58,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Study;

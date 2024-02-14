@@ -1,4 +1,3 @@
-// TableOfContents.js
 import React from 'react';
 import styles from './TableOfContents.module.css'; // Import CSS module for styling
 
@@ -15,7 +14,7 @@ const TableOfContents = () => {
             <li><a href="#prerequisites">Prerequisites</a></li>
             <li><a href="#audience">Target Audience</a></li>
             <li><a href="#duration">Course Duration</a></li>
-            <li><a href="#start">Let's Get Started!</a></li>
+            <li><a href="#start">Let&apos;s Get Started!</a></li> {/* Use &apos; to escape the single quote */}
           </ol>
         </li>
       </ol>

@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import Image from 'next/image';
 import Footer from '../components/Footer';
 import Navigation from '../components/Navigation';
 import styles from '../styles/Contact.module.css';
@@ -115,12 +116,14 @@ const Contact = () => {
           rel="noopener noreferrer"
           className={styles.whatsappLink}
         >
-            <img
-                src="https://img.icons8.com/color/48/000000/whatsapp--v1.png"
-                alt="WhatsApp Logo"
-                className={styles.whatsappLogo}
-            />
-            <span>Chat with us on WhatsApp</span>
+          <Image
+            src="/Photos/2.png"
+            alt="WhatsApp Logo"
+            className={styles.whatsappLogo}
+            width={48}
+            height={48}
+          />
+          <span>Chat with us on WhatsApp</span>
         </a>
       </div>
       <Footer /> {/* Include the Footer component */}

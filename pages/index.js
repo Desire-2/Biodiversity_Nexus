@@ -3,6 +3,7 @@
 import Head from 'next/head';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
+import Image from 'next/image'; 
 import styles from './index.module.css'; // Import CSS module for styling
 
 export default function Home() {
@@ -26,7 +27,7 @@ export default function Home() {
 
         <section className={styles.section}>
           <h2>Mission</h2>
-          <p>Our mission is to empower youth and communities by fostering a passionate student community dedicated to preserving and celebrating biodiversity through education, awareness, sustainable action, cultivating a deep connection to nature and a dedication to preserving the country's rich biodiversity.</p>
+          <p>Our mission is to empower youth and communities by fostering a passionate student community dedicated to preserving and celebrating biodiversity through education, awareness, sustainable action, cultivating a deep connection to nature and a dedication to preserving the country&apos;s rich biodiversity.</p>
         </section>
 
         <section className={styles.section}>
@@ -45,49 +46,49 @@ export default function Home() {
 
         <div className={styles.grid}>
           <div className={styles.card}>
-          <img src="./../images/1.jpg" alt="Education and Awareness" />
+          <Image className={styles.Image} src="/images/1.jpg" width={500} height={500}  alt="Education and Awareness" />
           <div className={styles.cardContent}></div>
             <h3>Education and Awareness</h3>
             <p>We provide educational resources and conduct awareness campaigns to inform students and communities about the importance of biodiversity conservation.</p>
           </div>
 
           <div className={styles.card}>
-          <img src="/./../images/14.jpg" alt="Education and Awareness" />
+          <Image src="/images/14.jpg" width={500} height={500} className={styles.Image} alt="Education and Awareness" />
           <div className={styles.cardContent}></div>
             <h3>Sustainable Action</h3>
             <p>We encourage and support sustainable practices and initiatives within our student community and beyond, promoting responsible actions that contribute to biodiversity preservation.</p>
           </div>
 
           <div className={styles.card}>
-          <img src="./../images/16.jpg" alt="Education and Awareness" />
+          <Image src="/images/16.jpg" width={500} height={500} className={styles.Image} alt="Education and Awareness" />
           <div className={styles.cardContent}></div>
             <h3>Community Engagement</h3>
             <p>We foster a passionate student community dedicated to biodiversity conservation, providing opportunities for collaboration, networking, and collective action.</p>
           </div>
 
           <div className={styles.card}>
-          <img src="./../Photos\2.jpg" alt="Education and Awareness" />
+          <Image src="/Photos\2.jpg" width={500} height={500} className={styles.Image} alt="Education and Awareness" />
           <div className={styles.cardContent}></div>
             <h3>Cultivating Connection to Nature</h3>
             <p>We organize nature-based activities, workshops, and events that help students develop a profound appreciation for the natural world and deepen their connection to biodiversity.</p>
           </div>
 
           <div className={styles.card}>
-          <img src="./../images/1.jpg" alt="Education and Awareness" />
+          <Image src="/images/1.jpg" width={500} height={500} className={styles.Image} alt="Education and Awareness" />
           <div className={styles.cardContent}></div>
             <h3>Preservation Efforts</h3>
-            <p>We actively participate in conservation projects and advocacy efforts aimed at preserving the country's rich biodiversity and addressing environmental challenges.</p>
+            <p>We actively participate in conservation projects and advocacy efforts aimed at preserving the country&apos;s rich biodiversity and addressing environmental challenges.</p>
           </div>
 
           <div className={styles.card}>
-          <img src="./../images/3.1.jpg" alt="Education and Awareness" />
+          <Image src="/images/3.1.jpg" width={500} height={500} className={styles.Image} alt="Education and Awareness" />
           <div className={styles.cardContent}></div>
             <h3>Research</h3>
             <p>We facilitate research opportunities for students to explore biodiversity-related topics, conduct studies, and contribute to scientific knowledge in the field of conservation biology.</p>
           </div>
 
           <div className={styles.card}>
-          <img src="./../Photos\1.MP.jpg" alt="Education and Awareness" />
+          <Image src="/Photos\1.MP.jpg" width={500} height={500} className={styles.Image} alt="Education and Awareness" />
           <div className={styles.cardContent}></div>
             <h3>Hands-on Experience</h3>
             <p>We provide hands-on learning experiences through field trips and practical projects, allowing students to apply their knowledge and skills in real-world conservation efforts.</p>

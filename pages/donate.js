@@ -20,7 +20,7 @@ export default function DonatePage() {
             <Navigation />
             <h1>Support Biodiversity Nexus Student Association</h1>
             <p className={styles.paragraph}>
-                Many organizations across the globe work tirelessly to conserve biodiversity and protect our planet. However, a significant challenge lies in the fact that often these efforts don't effectively reach non-educated populations. Despite their noble intentions, these organizations fail to engage and educate those who are not formally schooled. This gap in outreach can hinder conservation efforts and limit the impact we can collectively make.
+                Many organizations across the globe work tirelessly to conserve biodiversity and protect our planet. However, a significant challenge lies in the fact that often these efforts don&apos;t effectively reach non-educated populations. Despite their noble intentions, these organizations fail to engage and educate those who are not formally schooled. This gap in outreach can hinder conservation efforts and limit the impact we can collectively make.
             </p>
             <p className={styles.paragraph}>
                 At Biodiversity Nexus Student Association, we recognize the importance of inclusive conservation efforts. We believe that everyone, regardless of educational background, should have access to knowledge about biodiversity and the environment. By donating to our cause, you are not only supporting our conservation projects but also helping us bridge this gap by reaching out to non-educated communities and empowering them with knowledge and resources to protect our planet.

@@ -3,7 +3,7 @@ import Head from 'next/head';
 import Footer from '../components/Footer';
 import Navigation from '../components/Navigation';
 import styles from './projects.module.css';
-
+import Image from 'next/image';
 
 const sampleProjects = [
   { id: 1, title: 'Project 1', description: 'Description for Project 1', status: 'ongoing', image: '/images/project1.jpg' },
@@ -17,7 +17,7 @@ const adminCredentials = [
   // Add more admins as needed
 ];
 
-const Home = () => {
+const Projects = () => {
   const [projects, setProjects] = useState(sampleProjects);
   const [newProjectTitle, setNewProjectTitle] = useState('');
   const [newProjectDescription, setNewProjectDescription] = useState('');
@@ -125,10 +125,13 @@ const Home = () => {
               </div>
               {project.image && (
                 <div className={styles['project-image-container']}>
-                  <img
+                  {/* Use the Image component from next/image for optimization */}
+                  <Image
                     src={project.image}
                     alt={project.title}
                     className={styles['project-image']}
+                    width={300} // Adjust the width as needed
+                    height={200} // Adjust the height as needed
                   />
                 </div>
               )}
@@ -226,4 +229,4 @@ const Home = () => {
     </div>
   );
 }
-export default Home;
+export default Projects;

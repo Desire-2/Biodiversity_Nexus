@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import Footer from '../components/Footer';
 import Navigation from '../components/Navigation';
 import Head from 'next/head';
+import Image from 'next/image'; // Import Image component from next/image
 
 const Gallery = ({ images }) => {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -10,28 +11,26 @@ const Gallery = ({ images }) => {
   const openLightbox = (image, index) => {
     setSelectedImage(image);
     setCurrentIndex(index);
-    // Disable scrolling when lightbox is open
     document.body.style.overflow = 'hidden';
   };
 
   const closeLightbox = () => {
     setSelectedImage(null);
     setCurrentIndex(null);
-    // Enable scrolling when lightbox is closed
     document.body.style.overflow = 'auto';
   };
 
-  const nextImage = () => {
+  const nextImage = useCallback(() => {
     const nextIndex = (currentIndex + 1) % images.length;
     setSelectedImage(images[nextIndex]);
     setCurrentIndex(nextIndex);
-  };
+  }, [currentIndex, images]);
 
-  const prevImage = () => {
+  const prevImage = useCallback(() => {
     const prevIndex = (currentIndex - 1 + images.length) % images.length;
     setSelectedImage(images[prevIndex]);
     setCurrentIndex(prevIndex);
-  };
+  }, [currentIndex, images]);
 
   useEffect(() => {
     const handleKeyPress = (event) => {
@@ -45,12 +44,10 @@ const Gallery = ({ images }) => {
     };
 
     window.addEventListener('keydown', handleKeyPress);
-
     return () => {
       window.removeEventListener('keydown', handleKeyPress);
     };
-  }, [selectedImage, currentIndex]);
-
+  }, [selectedImage, currentIndex, nextImage, prevImage]); // Moved dependencies here
   return (
     <div>
       <Navigation />
@@ -60,13 +57,16 @@ const Gallery = ({ images }) => {
       <h1 className="gallery-title">Gallery</h1>
       <div className="image-grid">
         {images.map((image, index) => (
-          <img
-            key={index}
-            src={image}
-            alt={`Image ${index}`}
-            onClick={() => openLightbox(image, index)}
-            className="gallery-image"
-          />
+          <div key={index} onClick={() => openLightbox(image, index)}>
+            {/* Replace <img> with <Image /> */}
+            <Image
+              src={image}
+              alt={`Image ${index}`}
+              width={250}
+              height={250}
+              className="gallery-image"
+            />
+          </div>
         ))}
       </div>
 
@@ -74,7 +74,8 @@ const Gallery = ({ images }) => {
       {selectedImage && (
         <div className="lightbox" onClick={closeLightbox}>
           <button className="prev-btn" onClick={prevImage}>&#10094;</button>
-          <img src={selectedImage} alt="Selected" />
+          {/* Replace <img> with <Image /> */}
+          <Image src={selectedImage} alt="Selected" width={800} height={600} />
           <button className="next-btn" onClick={nextImage}>&#10095;</button>
           <div className="close-btn" onClick={closeLightbox}>&times;</div>
         </div>
@@ -173,7 +174,6 @@ export async function getStaticProps() {
       images,
     },
   };
- 
 }
 
 export default Gallery;

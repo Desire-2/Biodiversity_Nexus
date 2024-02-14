@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Footer from '../components/Footer';
 import Navigation from '../components/Navigation';
+import Image from 'next/image';
 import styles from './events.module.css'; // Importing CSS module for styling
 
 // Admin credentials
@@ -214,8 +215,8 @@ const EventsPage = () => {
                 <p>{event.description}</p>
               </div>
               {event.image && (
-                <img
-                  src={URL.createObjectURL(event.image)}
+                <Image
+                  src={URL.createObjectURL(event.image)} width={250} height={250}
                   alt={event.title}
                   className={styles.eventImage}
                 />
@@ -243,8 +244,8 @@ const EventsPage = () => {
               )}
             </div>
             {event.image && ( // Render event image if available
-              <img
-                src={URL.createObjectURL(event.image)}
+              <Image
+                src={URL.createObjectURL(event.image)} width={250} height={250}
                 alt={event.title}
                 className={styles.eventImage}
               />
@@ -265,8 +266,8 @@ const EventsPage = () => {
               <p>{event.description}</p>
             </div>
             {event.image && ( // Render event image if available
-              <img
-                src={URL.createObjectURL(event.image)}
+              <Image
+                src={URL.createObjectURL(event.image)}  width={250} height={250}
                 alt={event.title}
                 className={styles.eventImage}
               />
