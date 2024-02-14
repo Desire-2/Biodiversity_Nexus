@@ -1,4 +1,3 @@
-// Introduction.js
 import React from 'react';
 import styles from './Content.module.css'; // Import CSS module for styling
 
@@ -34,8 +33,8 @@ const Introduction = () => {
           <p>This course is designed for anyone interested in acquiring data analysis skills using Microsoft Excel. It is suitable for beginners as well as those looking to enhance their existing Excel skills.</p>
           <h4>Course Duration:</h4>
           <p>The course is self-paced and can be completed in approximately 4-6 weeks based on individual learning speed and time commitment.</p>
-          <h3>Let's Get Started!</h3>
-          <p>We're excited to embark on this journey of exploring data analysis with Microsoft Excel. Let's dive in and unlock the potential of data together!</p>
+          <h3>Let&apos;s Get Started!</h3>
+          <p>We&apos;re excited to embark on this journey of exploring data analysis with Microsoft Excel. Let&apos;s dive in and unlock the potential of data together!</p>
         </div>
       </div>
     );
