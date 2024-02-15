@@ -3,7 +3,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import Footer from '../components/Footer';
 import Navigation from '../components/Navigation';
-import styles from './testimonials.module.css'; // Import the CSS Module
+import styles from '../styles/testimonials.module.css'; // Import the CSS Module
 
 const Testimonials = () => {
   const [testimonials, setTestimonials] = useState([]);

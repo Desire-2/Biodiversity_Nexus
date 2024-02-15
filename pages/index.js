@@ -4,7 +4,7 @@ import Head from 'next/head';
 import Navigation from '../components/Navigation';
 import Footer from '../components/Footer';
 import Image from 'next/image'; 
-import styles from './index.module.css'; // Import CSS module for styling
+import styles from '../styles/index.module.css'; // Import CSS module for styling
 
 export default function Home() {
   return (

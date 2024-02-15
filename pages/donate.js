@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Footer from '../components/Footer';
 import Navigation from '../components/Navigation';
-import styles from './DonatePage.module.css'; // Import CSS file for styles
+import styles from '../styles/DonatePage.module.css'; // Import CSS file for styles
 
 export default function DonatePage() {
     const [donationAmount, setDonationAmount] = useState(0);

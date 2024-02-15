@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Footer from '../components/Footer';
 import Navigation from '../components/Navigation';
 import Image from 'next/image';
-import styles from './events.module.css';
+import styles from '../styles/events.module.css';
 
 const ADMIN_USERNAME = 'admin';
 const ADMIN_PASSWORD = 'password';

@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import Footer from '../components/Footer';
 import Navigation from '../components/Navigation';
 import partnersData from './data/partners.json';
-import styles from './partners..module.css'; // Adjust the path accordingly
+import styles from '../styles/partners..module.css'; // Adjust the path accordingly
 import Image from 'next/image'; // Import the Image component from next/image
 
 const PartnersPage = () => {

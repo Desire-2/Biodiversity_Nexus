@@ -2,7 +2,7 @@
 import React from 'react';
 import Footer from '../components/Footer';
 import Navigation from '../components/Navigation';
-import styles from './study.module.css'; // Import CSS module
+import styles from '../styles/study.module.css'; // Import CSS module
 import TutorialPage from './courses/excel'; // Import the TutorialPage component
 
 const Study = () => {

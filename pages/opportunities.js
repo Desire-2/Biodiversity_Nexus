@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import { TextField, Button, Select, MenuItem, FormControl, InputLabel } from '@mui/material';
 import Footer from '../components/Footer';
 import Navigation from '../components/Navigation';
-import styles from './Opportunity.module.css'; // Import CSS module
+import styles from '../styles/Opportunity.module.css'; // Import CSS module
 
 const Opportunity = () => {
   // State variables
@@ -133,7 +134,16 @@ const Opportunity = () => {
   const viewBookmarks = () => {
     // Display bookmarked opportunities in a separate section or modal
   };
+  // event.js
+const handleViewDetail = (bookmark) => {
   
+  // function implementation
+  console.log('Viewing bookmark:', bookmark);
+};
+ 
+
+
+// Now you can use handleViewDetail in opportunities.js
   const handleShare = opportunity => {
     setShowShareOptions(true);
     setSelectedOpportunity(opportunity);
@@ -172,22 +182,34 @@ const Opportunity = () => {
       </header>
       <h1>Conservation Opportunities</h1>
       {/* Search bar */}
-      <input type="text" placeholder="Search opportunities..." value={searchTerm} onChange={handleSearch} />
+      <TextField
+        label="Search opportunities"
+        variant="outlined"
+        value={searchTerm}
+        onChange={handleSearch}
+        className={styles.searchInput}
+      />
       {/* Filters */}
       <div className={styles.filters}>
         {Object.keys(filterMessages).map(type => (
-          <button key={type} onClick={() => handleFilter(type)}>{type}</button>
+          <Button key={type} onClick={() => handleFilter(type)}>{type}</Button>
         ))}
       </div>
       {/* Sort options */}
       <div className={styles.sortOptions}>
-        <label>Sort By:</label>
-        <select value={sortType} onChange={(e) => handleSort(e.target.value)}>
-          <option value="relevance">Relevance</option>
-          <option value="date">Date</option>
-          <option value="title">Title</option>
-        </select>
-        <button onClick={handleSortOrderChange}>Toggle Sort Order</button>
+        <FormControl variant="outlined">
+          <InputLabel>Sort By</InputLabel>
+          <Select
+            value={sortType}
+            onChange={(e) => handleSort(e.target.value)}
+            label="Sort By"
+          >
+            <MenuItem value="relevance">Relevance</MenuItem>
+            <MenuItem value="date">Date</MenuItem>
+            <MenuItem value="title">Title</MenuItem>
+          </Select>
+        </FormControl>
+        <Button onClick={handleSortOrderChange}>Toggle Sort Order</Button>
       </div>
       {/* Rendering based on loading, error, selected opportunity */}
       {loading ? (
@@ -202,9 +224,9 @@ const Opportunity = () => {
           <p>URL: <a href={selectedOpportunity.link}>{selectedOpportunity.link}</a></p>
           <p>Published: {selectedOpportunity.displayLink}</p>
           <p>Description: {selectedOpportunity.htmlSnippet}</p>
-          <button onClick={() => handleBookmark(selectedOpportunity)}>Bookmark</button>
-          <button onClick={() => handleShare(selectedOpportunity)}>Share</button>
-          <button onClick={clearDetailView}>Close</button>
+          <Button onClick={() => handleBookmark(selectedOpportunity)}>Bookmark</Button>
+          <Button onClick={() => handleShare(selectedOpportunity)}>Share</Button>
+          <Button onClick={clearDetailView}>Close</Button>
           {/* Share options */}
           {showShareOptions && (
             <div className={styles.shareOptions}>
@@ -231,8 +253,8 @@ const Opportunity = () => {
                 <li key={opportunity.cacheId}>
                   <h3>{opportunity.title}</h3>
                   <p>{opportunity.snippet}</p>
-                  <button onClick={() => handleDetailView(opportunity)}>View Details</button>
-                  <button onClick={() => handleBookmark(opportunity)}>Bookmark</button>
+                  <Button onClick={() => handleDetailView(opportunity)}>View Details</Button>
+                  <Button onClick={() => handleBookmark(opportunity)}>Bookmark</Button>
                 </li>
               ))
             ) : (
@@ -243,30 +265,30 @@ const Opportunity = () => {
           <ul className={styles.pagination}>
             {Array.from({ length: Math.ceil(opportunities.length / itemsPerPage) }, (_, i) => (
               <li key={i} className={currentPage === i + 1 ? styles.active : ''}>
-                <button onClick={() => paginate(i + 1)}>{i + 1}</button>
+                <Button onClick={() => paginate(i + 1)}>{i + 1}</Button>
               </li>
             ))}
           </ul>
           {/* Bookmarks */}
           <div className={styles.bookmarksContainer}>
-  <h2>Bookmarks</h2>
-  <div>
-        {bookmarks.length > 0 ? (
-          bookmarks.map(bookmark => (
-            <div key={bookmark.id} className={styles.bookmarkItem}>
-              <h3 className={styles.bookmarkTitle}>{bookmark.title}</h3>
-              <p className={styles.bookmarkSnippet}>{bookmark.snippet}</p>
-              {/* View detail button */}
-              <button className={styles.viewDetailButton} onClick={() => handleViewDetail(bookmark)}>View Detail</button>
-              {/* Remove bookmark button */}
-              <button className={styles.removeBookmarkButton} onClick={() => removeBookmark(bookmark)}>Remove Bookmark</button>
+            <h2>Bookmarks</h2>
+            <div>
+              {bookmarks.length > 0 ? (
+                bookmarks.map(bookmark => (
+                  <div key={bookmark.id} className={styles.bookmarkItem}>
+                    <h3 className={styles.bookmarkTitle}>{bookmark.title}</h3>
+                    <p className={styles.bookmarkSnippet}>{bookmark.snippet}</p>
+                    {/* View detail button */}
+                    <Button className={styles.viewDetailButton} onClick={() => handleViewDetail(bookmark)}>View Detail</Button>
+                    {/* Remove bookmark button */}
+                    <Button className={styles.removeBookmarkButton} onClick={() => removeBookmark(bookmark)}>Remove Bookmark</Button>
+                  </div>
+                ))
+              ) : (
+                <p>No bookmarks found.</p>
+              )}
             </div>
-      ))
-    ) : (
-      <p>No bookmarks found.</p>
-    )}
-  </div>
-</div>
+          </div>
         </>
       )}
       <Footer /> {/* Include the Footer component */}

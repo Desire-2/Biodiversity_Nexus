@@ -1,5 +1,5 @@
 // components/Footer.js
-import styles from './Navigation.module.css';
+import styles from '../styles/Navigation.module.css';
 import Image from 'next/image';
 const Footer = () => {
     return (

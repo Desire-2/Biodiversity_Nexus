@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Head from 'next/head';
 import Footer from '../components/Footer';
 import Navigation from '../components/Navigation';
-import styles from './projects.module.css';
+import styles from '../styles/projects.module.css';
 import Image from 'next/image';
 
 const sampleProjects = [

@@ -2,7 +2,7 @@ import Head from 'next/head';
 import Footer from '../components/Footer';
 import Navigation from '../components/Navigation';
 import Image from 'next/image'; // Import Image from next/image
-import styles from './styles/about.module.css'; // Import CSS module for styling
+import styles from '../styles/about.module.css'; // Import CSS module for styling
 
 export default function OrganizationalStructure() {
   // Sample data for departmental roles and member profiles
@@ -28,7 +28,7 @@ export default function OrganizationalStructure() {
               name: 'Jean Damour Irakoze',
               email: 'jdamourirakoze@gmail.com',
               phone: '+250786934546',
-              image: '/jane_smith.jpg'
+              image: '/Photos/3.jpg'
             }
           ]
         },
@@ -39,7 +39,7 @@ export default function OrganizationalStructure() {
               name: 'Liliane Uwizeyimana  ',
               email: 'uwizeyimanaliliane22@gmail.com',
               phone: '+250786700993',
-              image: '/jane_smith.jpg'
+              image: '/Photos/3.jpg'
             }
           ]
         },
@@ -50,7 +50,7 @@ export default function OrganizationalStructure() {
               name: 'Clemence MUGISHA',
               email: 'mugishaclemence6@gmail.com',
               phone: '+250789982043',
-              image: '/jane_smith.jpg'
+              image: '/Photos/3.jpg'
             }
           ]
         },
@@ -61,7 +61,7 @@ export default function OrganizationalStructure() {
               name: 'Mwiseneza Uwe Theophile ',
               email: 'mwisenezauwet@gmail.com',
               phone: '+250787492740',
-              image: '/jane_smith.jpg'
+              image: '/Photos/3.jpg'
             }
           ]
         },
@@ -77,7 +77,7 @@ export default function OrganizationalStructure() {
               name: 'Hemenegilde Undimwana',
               email: 'hermenegide3@gmail.com',
               phone: '+250781499864',
-              image: '/alice_johnson.jpg'
+              image: '/Photos/3.jpg'
             }
           ]
         },
@@ -88,7 +88,7 @@ export default function OrganizationalStructure() {
               name: 'Theoneste IRANKUNDA',
               email: 'bob@example.com',
               phone: '+250789428058',
-              image: '/bob_thompson.jpg'
+              image: '/Photos/3.jpg'
             }
           ]
         },
