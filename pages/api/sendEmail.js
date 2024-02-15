@@ -1,6 +1,11 @@
-import nodemailer from 'nodemailer';
+const express = require('express');
+const bodyParser = require('body-parser');
+const nodemailer = require('nodemailer');
 
-export default async function handler(req, res) {
+const app = express();
+const port = process.env.PORT || 4000;
+
+async function handler(req, res) {
   if (req.method === 'POST') {
     const { name, email, message } = req.body;
 
@@ -40,3 +45,9 @@ export default async function handler(req, res) {
     res.status(405).json({ message: 'Method Not Allowed' });
   }
 }
+
+app.post('/sendEmail', handler);
+
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
+});

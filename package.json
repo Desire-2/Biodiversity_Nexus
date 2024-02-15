@@ -1,40 +1,113 @@
 {
+  
   "name": "biodiversity-nexus-app",
+  
   "version": "0.1.0",
+  
   "private": true,
+  
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+  
+    
+  "dev": "next dev",
+  
+    
+  "build": "next build",
+  
+    
+  "start": "next start",
+  
+    
+  "lint": "next lint"
+  
   },
+  
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^6.5.1",
-    "@fortawesome/free-solid-svg-icons": "^6.5.1",
-    "@fortawesome/react-fontawesome": "^0.2.0",
-    "axios": "^1.6.7",
-    "chart.js": "^4.4.1",
-    "exceljs": "^4.4.0",
-    "firebase": "^10.8.0",
-    "next": "14.1.0",
-    "nodemailer": "^6.9.9",
-    "react": "^18",
-    "react-dom": "^18",
-    "react-dropzone": "^14.2.3",
-    "uuid": "^9.0.1"
+  
+    
+  "@fortawesome/fontawesome-free": "^6.5.1",
+  
+    
+  "@fortawesome/free-solid-svg-icons": "^6.5.1",
+  
+    
+  "@fortawesome/react-fontawesome": "^0.2.0",
+  
+    
+  "axios": "^1.6.7",
+  
+    
+  "body-parser": "^1.20.2",
+  
+    
+  "chart.js": "^4.4.1",
+  
+    
+  "cors": "^2.8.5",
+  
+    
+  "dotenv": "^16.4.4",
+  
+    
+  "exceljs": "^4.4.0",
+  
+    
+  "express": "^4.18.2",
+  
+    
+  "firebase": "^10.8.0",
+  
+    
+  "next": "14.1.0",
+  
+    
+  "nodemailer": "^6.9.9",
+  
+    
+  "react": "^18",
+  
+    
+  "react-dom": "^18",
+  
+    
+  "react-dropzone": "^14.2.3",
+  
+    
+  "uuid": "^9.0.1"
+  
   },
+  
   "devDependencies": {
-    "autoprefixer": "^10.0.1",
-    "eslint": "^8",
-    "eslint-config-next": "14.1.0",
-    "postcss": "^8",
-    "tailwindcss": "^3.3.0"
+  
+    
+  "autoprefixer": "^10.0.1",
+  
+    
+  "eslint": "^8",
+  
+    
+  "eslint-config-next": "14.1.0",
+  
+    
+  "postcss": "^8",
+  
+    
+  "tailwindcss": "^3.3.0"
+  
   },
+  
   "description": "This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).",
+  
   "main": "firebase.js",
+  
   "author": "",
+  
   "license": "ISC",
+  
   "directories": {
-    "lib": "lib"
+  
+    
+  "lib": "lib"
+  
   }
 }

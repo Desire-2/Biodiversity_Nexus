@@ -2,13 +2,11 @@ import React, { useState } from 'react';
 import Footer from '../components/Footer';
 import Navigation from '../components/Navigation';
 import Image from 'next/image';
-import styles from './events.module.css'; // Importing CSS module for styling
+import styles from './events.module.css';
 
-// Admin credentials
 const ADMIN_USERNAME = 'admin';
 const ADMIN_PASSWORD = 'password';
 
-// Sample data for events
 const eventsData = [
   {
     id: 1,
@@ -32,12 +30,10 @@ const eventsData = [
   },
 ];
 
-// EventsPage component
 const EventsPage = () => {
-  // State variables
-  const [isAdmin, setIsAdmin] = useState(false); // State for admin status
-  const [events, setEvents] = useState(eventsData); // State for events data
-  const [newEvent, setNewEvent] = useState({ // State for new event
+  const [isAdmin, setIsAdmin] = useState(false);
+  const [events, setEvents] = useState(eventsData);
+  const [newEvent, setNewEvent] = useState({
     title: '',
     location: '',
     date: '',
@@ -46,35 +42,32 @@ const EventsPage = () => {
     image: null,
     completed: false,
   });
-  const [editingEventId, setEditingEventId] = useState(null); // State for editing event ID
+  const [editingEventId, setEditingEventId] = useState(null);
 
-  // Function to toggle admin panel visibility
   const toggleAdminPanel = () => {
     if (!isAdmin) {
-      const username = prompt('Enter admin username:'); // Prompt for username
-      const password = prompt('Enter admin password:'); // Prompt for password
+      const username = prompt('Enter admin username:');
+      const password = prompt('Enter admin password:');
       if (username === ADMIN_USERNAME && password === ADMIN_PASSWORD) {
-        setIsAdmin(true); // Set admin status to true if credentials match
+        setIsAdmin(true);
       } else {
-        alert('Incorrect username or password'); // Alert for incorrect credentials
+        alert('Incorrect username or password');
       }
     } else {
-      setIsAdmin(false); // Set admin status to false if already an admin
+      setIsAdmin(false);
     }
   };
 
-  // Function to handle event completion
   const handleEventCompletion = (eventId) => {
     const updatedEvents = events.map((event) => {
       if (event.id === eventId) {
-        return { ...event, completed: true }; // Mark event as completed
+        return { ...event, completed: true };
       }
       return event;
     });
-    setEvents(updatedEvents); // Update events data
+    setEvents(updatedEvents);
   };
 
-  // Function to handle input change for new event
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setNewEvent((prevEvent) => ({
@@ -83,7 +76,6 @@ const EventsPage = () => {
     }));
   };
 
-  // Function to handle image upload for new event
   const handleImageUpload = (e) => {
     const file = e.target.files[0];
     setNewEvent((prevEvent) => ({
@@ -92,14 +84,13 @@ const EventsPage = () => {
     }));
   };
 
-  // Function to add new event
   const addEvent = () => {
     const newEventWithId = {
       ...newEvent,
       id: events.length + 1,
     };
-    setEvents((prevEvents) => [...prevEvents, newEventWithId]); // Add new event to events data
-    setNewEvent({ // Reset new event form
+    setEvents((prevEvents) => [...prevEvents, newEventWithId]);
+    setNewEvent({
       title: '',
       location: '',
       date: '',
@@ -110,20 +101,18 @@ const EventsPage = () => {
     });
   };
 
-  // Function to edit event
   const editEvent = (eventId) => {
-    setEditingEventId(eventId); // Set ID of event being edited
+    setEditingEventId(eventId);
     const eventToEdit = events.find((event) => event.id === eventId);
-    setNewEvent(eventToEdit); // Set new event data to event being edited
+    setNewEvent(eventToEdit);
   };
 
-  // Function to save edited event
   const saveEditedEvent = () => {
     const updatedEvents = events.map((event) =>
       event.id === newEvent.id ? newEvent : event
     );
-    setEvents(updatedEvents); // Update events data with edited event
-    setNewEvent({ // Reset new event form
+    setEvents(updatedEvents);
+    setNewEvent({
       title: '',
       location: '',
       date: '',
@@ -132,25 +121,22 @@ const EventsPage = () => {
       image: null,
       completed: false,
     });
-    setEditingEventId(null); // Reset editing event ID
+    setEditingEventId(null);
   };
 
-  // Function to remove event
   const removeEvent = (eventId) => {
     const updatedEvents = events.filter((event) => event.id !== eventId);
-    setEvents(updatedEvents); // Update events data by removing event
+    setEvents(updatedEvents);
   };
 
-  // Get the current date and time
   const currentDate = new Date();
 
-  // JSX for rendering the component
   return (
     <div className={styles.container}>
-      <Navigation /> {/* Include the Navigation component */}
+      <Navigation />
       <h1 className={styles.title}>Welcome to Our Events Page</h1>
 
-      {isAdmin && ( // Render admin panel if user is admin
+      {isAdmin && (
         <div className={styles.adminPanel}>
           <h2>{editingEventId ? 'Edit Event' : 'Add New Event'}</h2>
           <input
@@ -202,8 +188,10 @@ const EventsPage = () => {
           </button>
           {events.map((event) => (
             <div key={event.id} className={styles.event}>
-              {currentDate <= new Date(`${event.date} ${event.time}`) && ( // Check if event is upcoming
-                <button onClick={() => handleEventCompletion(event.id)}>Mark as Completed</button>
+              {currentDate <= new Date(`${event.date} ${event.time}`) && (
+                <button onClick={() => handleEventCompletion(event.id)}>
+                  Mark as Completed
+                </button>
               )}
               <button onClick={() => editEvent(event.id)}>Edit</button>
               <button onClick={() => removeEvent(event.id)}>Remove</button>
@@ -216,7 +204,9 @@ const EventsPage = () => {
               </div>
               {event.image && (
                 <Image
-                  src={URL.createObjectURL(event.image)} width={250} height={250}
+                  src={URL.createObjectURL(event.image)}
+                  width={250}
+                  height={250}
                   alt={event.title}
                   className={styles.eventImage}
                 />
@@ -228,7 +218,7 @@ const EventsPage = () => {
 
       <h2>Upcoming Events</h2>
       {events
-        .filter((event) => currentDate <= new Date(`${event.date} ${event.time}`)) // Filter upcoming events
+        .filter((event) => currentDate <= new Date(`${event.date} ${event.time}`))
         .map((event) => (
           <div key={event.id} className={styles.event}>
             <div>
@@ -237,15 +227,17 @@ const EventsPage = () => {
               <p>Date: {event.date}</p>
               <p>Time: {event.time}</p>
               <p>{event.description}</p>
-              {currentDate <= new Date(`${event.date} ${event.time}`) && ( // Render button to mark event as completed for upcoming events
+              {currentDate <= new Date(`${event.date} ${event.time}`) && (
                 <button onClick={() => handleEventCompletion(event.id)}>
                   Mark as Completed
                 </button>
               )}
             </div>
-            {event.image && ( // Render event image if available
+            {event.image && (
               <Image
-                src={URL.createObjectURL(event.image)} width={250} height={250}
+                src={URL.createObjectURL(event.image)}
+                width={250}
+                height={250}
                 alt={event.title}
                 className={styles.eventImage}
               />
@@ -255,7 +247,7 @@ const EventsPage = () => {
 
       <h2>Completed Events</h2>
       {events
-        .filter((event) => event.completed) // Filter completed events
+        .filter((event) => event.completed)
         .map((event) => (
           <div key={event.id} className={styles.event}>
             <div>
@@ -265,9 +257,11 @@ const EventsPage = () => {
               <p>Time: {event.time}</p>
               <p>{event.description}</p>
             </div>
-            {event.image && ( // Render event image if available
+            {event.image && (
               <Image
-                src={URL.createObjectURL(event.image)}  width={250} height={250}
+                src={URL.createObjectURL(event.image)}
+                width={250}
+                height={250}
                 alt={event.title}
                 className={styles.eventImage}
               />
@@ -278,7 +272,7 @@ const EventsPage = () => {
       <button className={styles.toggleButton} onClick={toggleAdminPanel}>
         {isAdmin ? 'Hide Admin Panel' : 'Show Admin Panel'}
       </button>
-      <Footer /> {/* Include the Footer component */}
+      <Footer />
     </div>
   );
 };
