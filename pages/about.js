@@ -4,7 +4,7 @@ import Navigation from '../components/Navigation';
 import Image from 'next/image'; // Import Image from next/image
 import styles from '../styles/about.module.css'; // Import CSS module for styling
 
-export default function OrganizationalStructure() {
+const OrganizationalStructure = () => {
   // Sample data for departmental roles and member profiles
   const departments = [
     {
@@ -143,4 +143,5 @@ export default function OrganizationalStructure() {
       <Footer />
     </div>
   );
-}
+};
+export default OrganizationalStructure;

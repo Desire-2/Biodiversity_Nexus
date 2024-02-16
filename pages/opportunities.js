@@ -4,7 +4,7 @@ import Footer from '../components/Footer';
 import Navigation from '../components/Navigation';
 import styles from '../styles/Opportunity.module.css'; // Import CSS module
 
-const Opportunity = () => {
+export default function Opportunity()  {
   // State variables
   const [opportunities, setOpportunities] = useState([]); // Array to store fetched opportunities
   const [loading, setLoading] = useState(true); // Loading state
@@ -294,6 +294,4 @@ const handleViewDetail = (bookmark) => {
       <Footer /> {/* Include the Footer component */}
     </div>
   );
-};
-
-export default Opportunity;
+}

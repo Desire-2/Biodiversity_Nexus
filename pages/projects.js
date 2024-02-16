@@ -6,8 +6,8 @@ import styles from '../styles/projects.module.css';
 import Image from 'next/image';
 
 const sampleProjects = [
-  { id: 1, title: 'Project 1', description: 'Description for Project 1', status: 'ongoing', image: '/images/project1.jpg' },
-  { id: 2, title: 'Project 2', description: 'Description for Project 2', status: 'completed', image: '/images/project2.jpg' },
+  { id: 1, title: 'Project 1', description: 'Description for Project 1', status: 'ongoing', image: '/../Photos/5.png' },
+  { id: 2, title: 'Project 2', description: 'Description for Project 2', status: 'completed', image: '/../Photos/6.jpg' },
 ];
 
 // Define multiple admin usernames and passwords

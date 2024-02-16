@@ -21,11 +21,14 @@
   .partner-logo {
     width: 100px;
     height: 100px;
-    margin-right: 20px;
+    border-radius: 50%;
+    transition: transform 0.3s ease-in-out;
+   
   }
   
   .partner-info {
     flex: 1;
+    margin-left: 150px;
   }
   
   .partner-name {
@@ -40,7 +43,7 @@
   
   /* Hover effect */
   .partner-item:hover {
-    background-color: #f5f5f5;
+    background-color: #976e06;
     transition: background-color 0.3s ease;
   }
   
