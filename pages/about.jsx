@@ -1,6 +1,6 @@
 import Head from 'next/head';
-import Footer from '../components/Footer';
-import Navigation from '../components/Navigation';
+import Footer from './components/Footer';
+import Navigation from './components/Navigation';
 import Image from 'next/image'; // Import Image from next/image
 import styles from '../styles/about.module.css'; // Import CSS module for styling
 

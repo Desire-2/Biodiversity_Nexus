@@ -1,87 +1,113 @@
-import React, { useState, useEffect, useCallback } from 'react';
-import Footer from '../components/Footer';
-import Navigation from '../components/Navigation';
+import React, { Component } from 'react';
+import Footer from './components/Footer';
+import Navigation from './components/Navigation';
 import Head from 'next/head';
 import Image from 'next/image'; // Import Image component from next/image
 
-const Gallery = ({ images }) => {
-  const [selectedImage, setSelectedImage] = useState(null);
-  const [currentIndex, setCurrentIndex] = useState(null);
+class Gallery extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      selectedImage: null,
+      currentIndex: null
+    };
+  }
 
-  const openLightbox = (image, index) => {
-    setSelectedImage(image);
-    setCurrentIndex(index);
+  openLightbox = (image, index) => {
+    this.setState({
+      selectedImage: image,
+      currentIndex: index
+    });
     document.body.style.overflow = 'hidden';
   };
 
-  const closeLightbox = () => {
-    setSelectedImage(null);
-    setCurrentIndex(null);
+  closeLightbox = () => {
+    this.setState({
+      selectedImage: null,
+      currentIndex: null
+    });
     document.body.style.overflow = 'auto';
   };
 
-  const nextImage = useCallback(() => {
+  nextImage = () => {
+    const { currentIndex } = this.state;
+    const { images } = this.props;
     const nextIndex = (currentIndex + 1) % images.length;
-    setSelectedImage(images[nextIndex]);
-    setCurrentIndex(nextIndex);
-  }, [currentIndex, images]);
+    this.setState({
+      selectedImage: images[nextIndex],
+      currentIndex: nextIndex
+    });
+  };
 
-  const prevImage = useCallback(() => {
+  prevImage = () => {
+    const { currentIndex } = this.state;
+    const { images } = this.props;
     const prevIndex = (currentIndex - 1 + images.length) % images.length;
-    setSelectedImage(images[prevIndex]);
-    setCurrentIndex(prevIndex);
-  }, [currentIndex, images]);
+    this.setState({
+      selectedImage: images[prevIndex],
+      currentIndex: prevIndex
+    });
+  };
 
-  useEffect(() => {
+  componentDidMount() {
     const handleKeyPress = (event) => {
       if (event.key === 'Escape') {
-        closeLightbox();
+        this.closeLightbox();
       } else if (event.key === 'ArrowRight') {
-        nextImage();
+        this.nextImage();
       } else if (event.key === 'ArrowLeft') {
-        prevImage();
+        this.prevImage();
       }
     };
 
     window.addEventListener('keydown', handleKeyPress);
-    return () => {
+    this.cleanup = () => {
       window.removeEventListener('keydown', handleKeyPress);
     };
-  }, [selectedImage, currentIndex, nextImage, prevImage]); // Moved dependencies here
-  return (
-    <div>
-      <Navigation />
-      <Head>
-        <title>Gallery</title>
-      </Head>
-      <h1 className="gallery-title">Gallery</h1>
-      <div className="image-grid">
-        {images.map((image, index) => (
-          <div key={index} onClick={() => openLightbox(image, index)}>
-            {/* Replace <img> with <Image /> */}
-            <Image
-              src={image}
-              alt={`Image ${index}`}
-              width={250}
-              height={250}
-              className="gallery-image"
-            />
-          </div>
-        ))}
-      </div>
+  }
 
-      {/* Lightbox */}
-      {selectedImage && (
-        <div className="lightbox" onClick={closeLightbox}>
-          <button className="prev-btn" onClick={prevImage}>&#10094;</button>
-          {/* Replace <img> with <Image /> */}
-          <Image src={selectedImage} alt="Selected" width={800} height={600} />
-          <button className="next-btn" onClick={nextImage}>&#10095;</button>
-          <div className="close-btn" onClick={closeLightbox}>&times;</div>
+  componentWillUnmount() {
+    this.cleanup();
+  }
+
+  render() {
+    const { images } = this.props;
+    const { selectedImage, currentIndex } = this.state;
+
+    return (
+      <div>
+        <Navigation />
+        <Head>
+          <title>Gallery</title>
+        </Head>
+        <h1 className="gallery-title">Gallery</h1>
+        <div className="image-grid">
+          {images.map((image, index) => (
+            <div key={index} onClick={() => this.openLightbox(image, index)}>
+              {/* Replace <img> with <Image /> */}
+              <Image
+                src={image}
+                alt={`Image ${index}`}
+                width={250}
+                height={250}
+                className="gallery-image"
+              />
+            </div>
+          ))}
         </div>
-      )}
 
-      <style jsx>{`
+        {/* Lightbox */}
+        {selectedImage && (
+          <div className="lightbox" onClick={this.closeLightbox}>
+            <button className="prev-btn" onClick={this.prevImage}>&#10094;</button>
+            {/* Replace <img> with <Image /> */}
+            <Image src={selectedImage} alt="Selected" width={800} height={600} />
+            <button className="next-btn" onClick={this.nextImage}>&#10095;</button>
+            <div className="close-btn" onClick={this.closeLightbox}>&times;</div>
+          </div>
+        )}
+
+        <style jsx>{`
         .gallery-title {
           text-align: center;
           margin-bottom: 30px;
@@ -153,11 +179,13 @@ const Gallery = ({ images }) => {
         .next-btn:hover {
           opacity: 0.7;
         }
-      `}</style>
-       <Footer />
-    </div>
-  );
-};
+          /* Styles */
+        `}</style>
+         <Footer />
+      </div>
+    );
+  }
+}
 
 export async function getStaticProps() {
   // Fetch images from the 'images' directory

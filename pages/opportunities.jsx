@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { TextField, Button, Select, MenuItem, FormControl, InputLabel } from '@mui/material';
-import Footer from '../components/Footer';
-import Navigation from '../components/Navigation';
+import Footer from './components/Footer';
+import Navigation from './components/Navigation';
 import styles from '../styles/Opportunity.module.css'; // Import CSS module
 
 export default function Opportunity()  {

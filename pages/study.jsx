@@ -1,9 +1,8 @@
 // pages/study.js
 import React from 'react';
-import Footer from '../components/Footer';
-import Navigation from '../components/Navigation';
-import styles from '../styles/study.module.css'; // Import CSS module
-import TutorialPage from './courses/excel'; // Import the TutorialPage component
+import Footer from './components/Footer';
+import Navigation from './components/Navigation';
+import styles from '../styles/study.module.css'; // Import CSS module// Import the TutorialPage components
 
 const Study = () => {
   const exploreCourse = (courseUrl) => {
