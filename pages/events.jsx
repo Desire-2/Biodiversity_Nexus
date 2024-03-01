@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Footer from './components/Footer';
-import Navigation from './components/Navigation';
+import Footer from '../components/Footer';
+import Navigation from '../components/Navigation';
 import Image from 'next/image';
 import styles from '../styles/events.module.css';
 

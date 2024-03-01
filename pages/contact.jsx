@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Image from 'next/image';
-import Footer from './components/Footer';
-import Navigation from './components/Navigation';
+import Footer from '../components/Footer';
+import Navigation from '../components/Navigation';
 import styles from '../styles/Contact.module.css';
 
 class Contact extends Component {

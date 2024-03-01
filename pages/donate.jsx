@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Footer from './components/Footer';
-import Navigation from './components/Navigation';
+import Footer from '../components/Footer';
+import Navigation from '../components/Navigation';
 import styles from '../styles/DonatePage.module.css'; // Import CSS file for styles
 
 class DonatePage extends Component {

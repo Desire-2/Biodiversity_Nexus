@@ -1,7 +1,7 @@
 // Layout.js
 import React from 'react';
-import TableOfContents from '../courses/excel/TableOfContents';
-import Content from '../courses/excel/Content';
+import TableOfContents from '../pages/courses/excel/TableOfContents';
+import Content from '../pages/courses/excel/Content';
 
 const Layout = () => {
   return (

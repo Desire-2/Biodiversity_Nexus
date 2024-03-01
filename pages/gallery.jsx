@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Footer from './components/Footer';
-import Navigation from './components/Navigation';
+import Footer from '../components/Footer';
+import Navigation from '../components/Navigation';
 import Head from 'next/head';
 import Image from 'next/image'; // Import Image component from next/image
 

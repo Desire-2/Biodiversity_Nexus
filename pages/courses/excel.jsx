@@ -1,7 +1,7 @@
 // pages/courses/excel.js
 import React, { useEffect, useState } from 'react';
 import { readExcelFile } from '../../utils/excelUtils';
-import Layout from '../components/excelLayout';
+import Layout from '../../components/excelLayout';
 
 const ExcelCoursePage = () => {
   const [excelData, setExcelData] = useState(null);
