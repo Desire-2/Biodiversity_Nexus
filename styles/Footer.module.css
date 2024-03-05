@@ -1,0 +1,56 @@
+/* Footer.module.css */
+.footer {
+    background-color: #f0f0f0;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px -5px 15px rgba(0, 0, 0, 0.1); /* Adding subtle box shadow */
+    transition: box-shadow 0.3s ease; /* Adding transition effect */
+}
+
+.footer:hover {
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2); /* Adjusted shadow on hover */
+}
+
+.logoContainer {
+    margin-bottom: 20px;
+}
+
+.contact,
+.socialMedia {
+    margin-bottom: 20px;
+}
+
+.contact h3,
+.socialMedia h3 {
+    color: #333;
+    font-size: 18px; /* Adjusted font size */
+    margin-bottom: 10px;
+    font-family: 'Arial', sans-serif; /* Changed font family */
+}
+
+.contact p,
+.socialMedia ul {
+    list-style-type: none;
+    padding: 0;
+    font-size: 16px; /* Adjusted font size */
+}
+
+.socialMedia ul li {
+    display: inline-block;
+    margin-right: 10px;
+    transition: transform 0.3s ease; /* Adding transition effect */
+}
+
+.socialMedia ul li:hover {
+    transform: scale(1.1); /* Scaling up on hover */
+}
+
+.copy {
+    color: #666;
+    font-size: 14px;
+    text-align: center;
+    font-family: 'Arial', sans-serif; /* Changed font family */
+}

@@ -22,7 +22,9 @@ export default function Home() {
         <div className={styles.hero}>
           <h1 className={styles.title}>Welcome to Biodiversity Nexus</h1>
           <p className={styles.subtitle}>Empowering youth in conservation</p>
-          <button className={styles.button}>Get Involved</button> {/* Make "Get Involved" a button */}
+          <button className={styles.button}> <link  href="/getinvolved" />
+          Get Involved
+          </button> {/* Make "Get Involved" a button */}
         </div>
 
         <section className={styles.section}>

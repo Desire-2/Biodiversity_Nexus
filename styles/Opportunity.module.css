@@ -1,6 +1,7 @@
 /* Opportunity.module.css */
 
 /* General styles */
+
 .opportunityContainer {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   max-width: 800px; /* Adjust max-width as needed */
@@ -16,7 +17,15 @@
   text-align: center;
   margin-bottom: 20px;
 }
+.searchInput {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  border-radius: 6px;
+  font-size: 16px;
 
+}
 .opportunityContainer input[type="text"] {
   width: 100%;
   padding: 10px;

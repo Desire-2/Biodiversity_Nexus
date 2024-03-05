@@ -176,9 +176,10 @@ const handleViewDetail = (bookmark) => {
   };
 
   return (
+    <div><Navigation />
     <div className={styles.opportunityContainer}>
       <header>
-        <Navigation /> {/* Include the Navigation component */}
+         {/* Include the Navigation component */}
       </header>
       <h1>Conservation Opportunities</h1>
       {/* Search bar */}
@@ -291,7 +292,9 @@ const handleViewDetail = (bookmark) => {
           </div>
         </>
       )}
-      <Footer /> {/* Include the Footer component */}
+     {/* Include the Footer component */}
+    </div>
+    <Footer />
     </div>
   );
 }
